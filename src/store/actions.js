@@ -1,14 +1,14 @@
-import { REQUEST_POSTS, NO_MORE_POSTS } from "./types";
+import { REQUEST_LIST_ITEMS, NO_MORE_ITEMS } from "./types";
 
-export function fetchPosts(url) {
+export function fetchListItems(url) {
   return {
-    type: REQUEST_POSTS,
+    type: REQUEST_LIST_ITEMS,
     payload: url,
   };
 }
 
-export function noMorePosts() {
+export function noMoreItems() {
   return {
-    type: NO_MORE_POSTS,
+    type: NO_MORE_ITEMS,
   };
 }

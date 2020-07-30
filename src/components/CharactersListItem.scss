@@ -1,0 +1,32 @@
+.list_item {
+  position: relative;
+  margin: 15px auto;
+  height: 100px;
+  width: 80%;
+  border: 0 solid #e5e5e5;
+  overflow: hidden;
+  display: block;
+  cursor: pointer;
+  background-color: rgb(255, 245, 245);
+  box-shadow: 0 2px 2px 0 rgba(252, 252, 252, 0.5),
+    0 0 0 3px rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  text-indent: 20px;
+  text-decoration: none;
+  font-size: 3.5rem;
+  font-family: "Ranchers", cursive;
+  .list_item_img {
+    right: 0;
+    position: absolute;
+    top: 0;
+    img {
+      height: 100px;
+      width: 100px;
+    }
+  }
+}
+a,
+a:visited,
+a:active {
+  color: #0f0302;
+}

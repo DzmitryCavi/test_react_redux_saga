@@ -1,22 +1,22 @@
-import { FETCH_POSTS, NO_MORE_POSTS } from "./types";
+import { FETCH_LIST_ITEMS, NO_MORE_ITEMS } from "./types";
 
 const initialState = {
-  fetchedPosts: [],
+  listItems: [],
   url: "https://rickandmortyapi.com/api/character/?page=1",
   hasMore: true,
 };
 
-export const postReduser = (state = initialState, action) => {
+export const listReduser = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_POSTS:
+    case FETCH_LIST_ITEMS:
       return {
         ...state,
-        fetchedPosts: state.fetchedPosts.concat(
+        listItems: state.listItems.concat(
           Object.values(action.payload.data.results).map((v) => v)
         ),
         url: action.payload.data.info.next,
       };
-    case NO_MORE_POSTS:
+    case NO_MORE_ITEMS:
       return { ...state, hasMore: false };
     default:
       return state;

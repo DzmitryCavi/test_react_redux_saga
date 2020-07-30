@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import { postReduser } from "./postReduser";
+import { listReduser } from "./listReduser";
 
 export const Redusers = combineReducers({
-  posts: postReduser,
+  list: listReduser,
 });
