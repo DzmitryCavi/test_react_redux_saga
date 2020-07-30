@@ -16,13 +16,7 @@ const saga = createSagaMiddleware();
 
 const history = createBrowserHistory();
 
-const store = createStore(
-  Redusers,
-  compose(
-    applyMiddleware(thunk, saga),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
-);
+const store = createStore(Redusers, compose(applyMiddleware(thunk, saga)));
 
 saga.run(sagaWatcher);
 
