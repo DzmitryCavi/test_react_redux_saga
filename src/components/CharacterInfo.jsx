@@ -7,7 +7,7 @@ import "./CharacterInfo.scss";
 export default function CharactersInfo() {
   const { id } = useParams();
   const characterData = useSelector((state) =>
-    state.list.listItems.find((el) => el.id == id)
+    state.list.listItems.find((el) => el.id === +id)
   );
   return (
     <div className="character_card_container">
