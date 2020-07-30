@@ -1,16 +1,20 @@
-import React from 'react';
-import FetchedPost from './components/FetchedPost'
+import React from "react";
+import { Route, Switch, Redirect, withRouter } from "react-router-dom";
 
-function App() {
+import Posts from "./components/Posts";
+import Card from "./components/Card";
+
+function App(props) {
+  const { history } = props;
   return (
     <div className="container">
-      <div className="row">
-        <div className="col">
-          <FetchedPost />
-        </div>
-      </div>
+      <Switch>
+        <Route exact history={history} path="/posts" component={Posts} />
+        <Route exact path="/:id" children={Card} />
+        <Redirect from="/" to="/posts/" />
+      </Switch>
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);

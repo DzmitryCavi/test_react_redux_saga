@@ -1,20 +1,14 @@
+import { REQUEST_POSTS, NO_MORE_POSTS } from "./types";
 
-import { REQUEST_POSTS, HIDE_LOADER, SHOW_LOADER } from "./types"
-
-export function fetchPosts(){
-    return {
-        type: REQUEST_POSTS
-    }
+export function fetchPosts(url) {
+  return {
+    type: REQUEST_POSTS,
+    payload: url,
+  };
 }
 
-export function showLoader() {
-    return {
-        type: SHOW_LOADER
-    }
-}
-
-export function hideLoader() {
-    return {
-        type: HIDE_LOADER
-    }
+export function noMorePosts() {
+  return {
+    type: NO_MORE_POSTS,
+  };
 }
