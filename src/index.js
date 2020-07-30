@@ -5,7 +5,7 @@ import { createStore, compose, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { sagaWatcher } from "./store/sagas.js";
 import thunk from "redux-thunk";
-import { Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
 import App from "./App.jsx";
@@ -22,9 +22,9 @@ saga.run(sagaWatcher);
 
 const app = (
   <Provider store={store}>
-    <Router history={history}>
+    <BrowserRouter history={history}>
       <App />
-    </Router>
+    </BrowserRouter>
   </Provider>
 );
 
