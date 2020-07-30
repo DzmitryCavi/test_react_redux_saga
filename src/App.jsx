@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, Redirect, withRouter } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 
 import CharactersList from "./components/CharactersList";
 import CharacterInfo from "./components/CharacterInfo";
@@ -10,9 +10,8 @@ function App(props) {
   const { history } = props;
   return (
     <Switch>
-      <Route exact history={history} path="/posts" component={CharactersList} />
-      <Route exact path="/posts/:id" component={CharacterInfo} />
-      <Redirect from="/" to="/posts/" />
+      <Route exact history={history} path="/" component={CharactersList} />
+      <Route exact path="/:id" component={CharacterInfo} />
     </Switch>
   );
 }

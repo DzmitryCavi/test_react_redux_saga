@@ -27,7 +27,7 @@ export default function CharactersInfo() {
           </div>
         </div>
       ) : (
-        <Link to={`/posts`} className="back_to_list_btn">
+        <Link to={`/`} className="back_to_list_btn">
           Back to List of characters
         </Link>
       )}
