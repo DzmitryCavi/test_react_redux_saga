@@ -1,16 +1,32 @@
 import { takeEvery, put, call } from "redux-saga/effects";
-import { REQUEST_LIST_ITEMS, FETCH_LIST_ITEMS } from "./types";
+import {
+  REQUEST_LIST_ITEMS,
+  FETCH_LIST_ITEMS,
+  FETCH_CHARACTER_INFO,
+  REQUEST_CHARACTER_INFO,
+} from "./types";
 import axios from "axios";
 
 export function* sagaWatcher() {
-  yield takeEvery(REQUEST_LIST_ITEMS, sagaWorker);
+  yield takeEvery(REQUEST_LIST_ITEMS, sagaListWorker);
+  yield takeEvery(REQUEST_CHARACTER_INFO, sagaCharacterWorker);
 }
 
-function* sagaWorker(action) {
+function* sagaListWorker(action) {
   let url = action.payload;
   try {
     const payload = yield call(fetchListItems, url);
     yield put({ type: FETCH_LIST_ITEMS, payload });
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+function* sagaCharacterWorker(action) {
+  let url = action.payload;
+  try {
+    const payload = yield call(fetchListItems, url);
+    yield put({ type: FETCH_CHARACTER_INFO, payload });
   } catch (e) {
     console.log(e);
   }

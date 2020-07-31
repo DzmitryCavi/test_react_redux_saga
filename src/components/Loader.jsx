@@ -1,7 +1,7 @@
 import React from "react";
 import "./Loader.scss";
 
-export default ({ data }) => (
+export default () => (
   <div className="lds-ring">
     <div></div>
     <div></div>

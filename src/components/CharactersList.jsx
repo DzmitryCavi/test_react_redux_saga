@@ -10,12 +10,12 @@ import "./CharactersList.scss";
 
 export default () => {
   const dispatch = useDispatch();
-  const listItems = useSelector((state) => state.list.listItems);
-  const url = useSelector((state) => state.list.url);
-  const hasMore = useSelector((state) => state.list.hasMore);
+  const { listItems, maxListCount, url, hasMore } = useSelector(
+    (state) => state.list
+  );
 
   const fetchMoreData = () => {
-    if (listItems.length >= 500) {
+    if (listItems.length >= maxListCount) {
       dispatch(noMoreItems);
       return;
     }
