@@ -3,20 +3,20 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, compose, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
-import { sagaWatcher } from "./store/sagas.js";
+import { sagaWatcher } from "./store/sagas/sagas.js";
 import thunk from "redux-thunk";
 import { Router } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
 import App from "./App.jsx";
 import * as serviceWorker from "./serviceWorker";
-import { Redusers } from "./store/redusers";
+import { Reducers } from "./store/rootReducer";
 
 const saga = createSagaMiddleware();
 
 const history = createBrowserHistory();
 
-const store = createStore(Redusers, compose(applyMiddleware(thunk, saga)));
+const store = createStore(Reducers, compose(applyMiddleware(thunk, saga)));
 
 saga.run(sagaWatcher);
 

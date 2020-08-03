@@ -2,7 +2,7 @@ import {
   REQUEST_LIST_ITEMS,
   NO_MORE_ITEMS,
   REQUEST_CHARACTER_INFO,
-} from "./types";
+} from "../types/types";
 
 export function fetchListItems(url) {
   return {

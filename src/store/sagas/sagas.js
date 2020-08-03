@@ -4,7 +4,7 @@ import {
   FETCH_LIST_ITEMS,
   FETCH_CHARACTER_INFO,
   REQUEST_CHARACTER_INFO,
-} from "./types";
+} from "../types/types";
 import axios from "axios";
 
 export function* sagaWatcher() {

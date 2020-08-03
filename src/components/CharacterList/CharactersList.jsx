@@ -2,20 +2,19 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-import CharactersListItem from "./CharactersListItem";
-import Loader from "./Loader";
-import { fetchListItems, noMoreItems } from "../store/actions";
+import CharactersListItem from "./CharacterListItem/CharactersListItem";
+import Loader from "../Loader/Loader";
+import { fetchListItems, noMoreItems } from "../../store/actions/actions";
 
 import "./CharactersList.scss";
 
 export default () => {
   const dispatch = useDispatch();
-  const { listItems, maxListCount, url, hasMore } = useSelector(
-    (state) => state.list
-  );
+  const { listItems, info, hasMore } = useSelector((state) => state.list);
+  const { url, count } = info;
 
   const fetchMoreData = () => {
-    if (listItems.length >= maxListCount) {
+    if (listItems.length >= count) {
       dispatch(noMoreItems);
       return;
     }

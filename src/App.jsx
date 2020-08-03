@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 
-import CharactersList from "./components/CharactersList";
-import CharacterInfo from "./components/CharacterInfo";
+import CharactersList from "./components/CharacterList/CharactersList";
+import CharacterInfo from "./components/CharacterInfo/CharacterInfo";
 
 import "./App.scss";
 

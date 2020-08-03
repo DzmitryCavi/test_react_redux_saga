@@ -3,17 +3,19 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { fetchCharacterData } from "../store/actions";
+import { fetchCharacterData } from "../../store/actions/actions";
 
-import Loader from "./Loader";
+import Loader from "../Loader/Loader";
 
-import { API_CHARACTER_INFO_URL } from "../common/config";
+import { API_CHARACTER_INFO_URL } from "../../common/config";
 import "./CharacterInfo.scss";
 
 export default function CharactersInfo() {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const characterData = useSelector((state) => state.character.data.data);
+  const characterData = useSelector(
+    (state) => state.character.fetchedData.data
+  );
 
   if (
     !characterData ||
