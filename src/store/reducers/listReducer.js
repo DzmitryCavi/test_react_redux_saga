@@ -4,7 +4,7 @@ import { API_CHARACTERS_LIST_URL } from "../../common/config";
 const initialState = {
   listItems: [],
   hasMore: true,
-  info: { url: API_CHARACTERS_LIST_URL },
+  info: { next: API_CHARACTERS_LIST_URL },
 };
 
 export const listReducer = (state = initialState, action) => {

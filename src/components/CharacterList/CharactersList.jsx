@@ -11,7 +11,7 @@ import "./CharactersList.scss";
 export default () => {
   const dispatch = useDispatch();
   const { listItems, info, hasMore } = useSelector((state) => state.list);
-  const { url, count } = info;
+  const { next, count } = info;
 
   const fetchMoreData = () => {
     if (listItems.length >= count) {
@@ -19,12 +19,12 @@ export default () => {
       return;
     }
     setTimeout(() => {
-      dispatch(fetchListItems(url));
+      dispatch(fetchListItems(next));
     }, 500);
   };
 
   if (!listItems.length) {
-    dispatch(fetchListItems(url));
+    dispatch(fetchListItems(next));
     return <Loader />;
   }
 
